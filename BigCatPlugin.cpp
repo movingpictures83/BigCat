@@ -1,11 +1,11 @@
 #include "PluginManager.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "FatCatPlugin.h"
+#include "BigCatPlugin.h"
 
 #include <iostream>
 
-void FatCatPlugin::input(std::string file) {
+void BigCatPlugin::input(std::string file) {
  inputfile = file;
     std::ifstream infile(file.c_str(), std::ios::in);
     std::string singlefile;
@@ -17,12 +17,15 @@ void FatCatPlugin::input(std::string file) {
        catFiles.push_back(singlefile);
        lastread = singlefile;
        }
+       else {
+	       break;
+       }
     }
  }
 
-void FatCatPlugin::run() {}
+void BigCatPlugin::run() {}
 
-void FatCatPlugin::output(std::string file) {
+void BigCatPlugin::output(std::string file) {
  std::string outputfile = file;
  std::string myCommand = "cat ";
     std::cout << catFiles.size() << std::endl;
@@ -33,4 +36,4 @@ void FatCatPlugin::output(std::string file) {
  system(myCommand.c_str());
 }
 
-PluginProxy<FatCatPlugin> FatCatPluginProxy = PluginProxy<FatCatPlugin>("FatCat", PluginManager::getInstance());
+PluginProxy<BigCatPlugin> BigCatPluginProxy = PluginProxy<BigCatPlugin>("BigCat", PluginManager::getInstance());

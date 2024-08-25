@@ -1,2 +1,2 @@
-Prefix plugins/FatCat/example
-Plugin FatCat inputfile parameters.fatcat.txt outputfile mycat.txt
+Prefix plugins/BigCat/example
+Plugin BigCat inputfile parameters.fatcat.txt outputfile mycat.txt
